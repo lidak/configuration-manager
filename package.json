@@ -1,0 +1,21 @@
+{
+  "name": "configuration_manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "cli-args": "^2.0.0",
+    "lodash": "^4.17.5",
+    "mocha": "^5.0.5",
+    "yamljs": "^0.3.0"
+  }
+}

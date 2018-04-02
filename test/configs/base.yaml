@@ -1,0 +1,9 @@
+baseConfigProp: baseConfigValue # just to test
+some_array:
+ - one
+ - two
+ - three
+obj:
+ someShareProp: base
+ cliParam: base
+USER: me
