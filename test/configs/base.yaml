@@ -7,3 +7,5 @@ obj:
  someShareProp: base
  cliParam: base
 USER: me
+clientProps:
+ - some_array
