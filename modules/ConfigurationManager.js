@@ -1,4 +1,4 @@
-const _ = require('lodash');
+const get = require('lodash.get');
 
 module.exports = class ConfigurationManager {
   constructor({config}) {
@@ -6,6 +6,6 @@ module.exports = class ConfigurationManager {
   }
 
   get(dotNotaion) {
-    return _.get(this.config, dotNotaion, undefined);
+    return get(this.config, dotNotaion, undefined);
   }
 };

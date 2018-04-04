@@ -1,6 +1,7 @@
 const yamljs = require('yamljs');
 const path = require('path');
-const _ = require('lodash');
+const pick = require('lodash.pick');
+const merge = require('lodash.merge');
 const cliArgs = require('cli-args');
 
 module.exports = class ConfigurationManager {
@@ -21,10 +22,10 @@ module.exports = class ConfigurationManager {
     const baseConfig = this.convertFileContentToJSON(`base.${this.configFilesExtension}`);
     const CLIArgs =  cliArgs(process.argv.slice(2));
 
-    const notEnvConfigs = _.merge(baseConfig, envConfig, CLIArgs);
-    const envConfigs = _.pick(process.env, _.keys(notEnvConfigs));
+    const notEnvConfigs = merge(baseConfig, envConfig, CLIArgs);
+    const envConfigs = pick(process.env, Object.keys(notEnvConfigs));
 
-    this.configuration = _.merge(notEnvConfigs, envConfigs);
+    this.configuration = merge(notEnvConfigs, envConfigs);
   }
 
   convertFileContentToJSON(fileName) {
